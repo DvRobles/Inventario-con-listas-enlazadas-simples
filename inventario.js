@@ -194,9 +194,6 @@ foundProduct.addEventListener('click',()=>{
 
 const posiProduct = document.getElementById('insertar-prod');
 
-//pensar como actualizar o mover posicion 
-
-
 posiProduct.addEventListener('click',()=>{
     let codigo = parseInt(document.getElementById('codigo').value);
     let nombre = document.getElementById('nombre').value;
