@@ -55,7 +55,7 @@ class Inventory {
             return false;
         }
 
-        insertProduct(posicion, nuevo){
+        insertProduct(nuevo, posicion){
             if(this.primero == null){
                 return false;
             }
@@ -192,10 +192,24 @@ foundProduct.addEventListener('click',()=>{
 })
 
 
-const posiProduct = document.getElementById('posicion');
+const posiProduct = document.getElementById('insertar-prod');
 
 //pensar como actualizar o mover posicion 
 
+
+posiProduct.addEventListener('click',()=>{
+    let codigo = parseInt(document.getElementById('codigo').value);
+    let nombre = document.getElementById('nombre').value;
+    let cantidad = document.getElementById('cantidad').value;
+    let costo = document.getElementById('costo').value;
+    let posicion = document.getElementById('posicion').value;
+
+    let producto = new Productos(codigo, nombre, cantidad, costo);
+
+    let saveProduct = lista.insertProduct(producto,posicion);
+
+    document.getElementById('inventario').innerHTML = '<ul>El producto ha sido insertado en la posición con éxito!.</ul>'
+})
 
 
 
